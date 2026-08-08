@@ -1,8 +1,8 @@
 :root {
     /* Main Branding Colors */
     --primary-color: #0F766E;
-    --primary-hover: #0B5F59;
-    --primary-light: #CCFBF1;
+    --primary-hover: #0b6d65;
+    --primary-light: #ecfdf5;
 
     /* Text & Neutral Colors */
     --text-dark: #2F2F2F;
