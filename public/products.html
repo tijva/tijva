@@ -154,12 +154,14 @@
 
                 <div class="category-chips-wrapper" id="categoryChips">
                     <button class="chip active" data-value="">All Categories</button>
-                    <button class="chip" data-value="electronics"><i class="fas fa-laptop-code"></i>
-                        Electronics</button>
-                    <button class="chip" data-value="kitchen&home"><i class="fas fa-kitchen-set"></i> Kitchen & Home
-                        Decor</button>
-                    <button class="chip" data-value="clothing"><i class="fas fa-shirt"></i> Clothing</button>
-                    <button class="chip" data-value="health"><i class="fas fa-dumbbell"></i> Health & Fitness</button>
+                    <button class="chip" data-value="electronics">
+                        <i class="fas fa-laptop-code"></i>
+                        Electronics
+                    </button>
+                    <button class="chip" data-value="accessories">
+                        <i class="fas fa-puzzle-piece"></i>
+                        Accessories
+                    </button>
                 </div>
 
                 <div class="custom-dropdown" id="categoryDropdown">
@@ -175,14 +177,8 @@
                         <div class="dropdown-item" data-value="electronics">
                             Electronics
                         </div>
-                        <div class="dropdown-item" data-value="kitchen&home">
-                            kitchen & Home Decor
-                        </div>
-                        <div class="dropdown-item" data-value="clothing">
-                            Clothing
-                        </div>
-                        <div class="dropdown-item" data-value="health">
-                            Health & Fitness
+                        <div class="dropdown-item" data-value="accessories">
+                            Accessories
                         </div>
                     </div>
                 </div>
@@ -479,21 +475,21 @@
         ----------------------------*/
         const searchInput = document.getElementById("productSearch");
 
-            searchInput?.addEventListener("input", () => {
-                filterAndDisplayProducts();
+        searchInput?.addEventListener("input", () => {
+            filterAndDisplayProducts();
 
-                clearTimeout(searchAnalyticsTimeout);
+            clearTimeout(searchAnalyticsTimeout);
 
-                searchAnalyticsTimeout = setTimeout(() => {
-                    const term = searchInput.value.trim();
+            searchAnalyticsTimeout = setTimeout(() => {
+                const term = searchInput.value.trim();
 
-                    if (term && typeof gtag === "function") {
-                        gtag("event", "search", {
-                            search_term: term
-                        });
-                    }
-                }, 500); // Fires 500ms after the user stops typing
-            });
+                if (term && typeof gtag === "function") {
+                    gtag("event", "search", {
+                        search_term: term
+                    });
+                }
+            }, 500); // Fires 500ms after the user stops typing
+        });
 
         window.addEventListener("hashchange", renderProductsFromFirestore);
 
