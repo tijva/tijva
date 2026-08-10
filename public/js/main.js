@@ -223,8 +223,11 @@ window.showNotification = function (message, type = "success", duration = 3000) 
 
 // Global function to handle product clicks
 window.openProduct = (productId) => {
-    if (!productId) return;
+
+    if (productId === undefined || productId === null) return;
+
     window.location.href = `product.html?id=${productId}`;
+
 };
 
 /* =========================
