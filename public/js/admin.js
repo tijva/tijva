@@ -1,4 +1,5 @@
 import { auth, db } from './firebase-config.js';
+import { setupAdminNotifications } from './notifications.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import {
     collection, query, orderBy, onSnapshot, doc, getDoc,
@@ -32,7 +33,11 @@ onAuthStateChanged(auth, async (user) => {
         if (userDoc.exists() && userDoc.data().role === 'admin') {
             // Authorized admin user
             if (overlay) overlay.style.display = 'none';
+
             startOrderListener();
+
+            // Enable admin push notifications
+            setupAdminNotifications();
         } else {
             // Not an admin, redirect to shop
             window.location.href = "products.html";
@@ -109,9 +114,9 @@ function startProductListener() {
 }
 
 function renderProductRow(docId, p) {
-    const displayImg = (Array.isArray(p.images) && p.images.length > 0)
-        ? p.images[0]
-        : 'assets/images/placeholder.png';
+    const displayImg = p.imageFolder
+        ? `assets/images/products/${p.imageFolder}/1.webp`
+        : 'assets/images/placeholder.webp';
     const row = document.createElement('tr');
     row.innerHTML = `
         <td><img src="${displayImg}" width="50" height="50"
