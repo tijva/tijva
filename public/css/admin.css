@@ -7,20 +7,15 @@
     --primary-color: #0f766e;
     --primary-hover: #0d665f;
     --primary-light: #ecfdf5;
-
     --success: #10b981;
     --danger: #ef4444;
     --warning: #f59e0b;
-
     --bg-light: #f8fafc;
     --text-main: #222222;
     --text-dark: #222222;
     --text-muted: #666666;
-
     --white: #ffffff;
-
     --sidebar-width: 260px;
-
     --shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.08),
         0 2px 4px -1px rgba(0, 0, 0, 0.04);
@@ -67,36 +62,27 @@ body {
     width: var(--sidebar-width);
     background: #111827;
     color: white;
-
     padding: 2rem 1rem;
-
     position: fixed;
     left: 0;
     top: 0;
-
     height: 100vh;
-
     z-index: 100;
-
     overflow-y: auto;
 }
 
 .sidebar .logo {
     display: block;
-
     font-size: 1.5rem;
     font-weight: 800;
-
     margin-bottom: 3rem;
     padding-left: 1rem;
-
     color: white;
     text-decoration: none;
 }
 
 .sidebar .logo span {
     color: var(--primary-color);
-
     font-size: 0.9rem;
     text-transform: uppercase;
 }
@@ -108,15 +94,11 @@ body {
 .sidebar li {
     padding: 12px 16px;
     margin-bottom: 8px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     transition:
         background 0.2s ease,
         transform 0.15s ease;
-
     display: flex;
     align-items: center;
     gap: 12px;
@@ -125,7 +107,6 @@ body {
 .sidebar li a {
     color: #94a3b8;
     text-decoration: none;
-
     font-weight: 500;
 }
 
@@ -158,11 +139,8 @@ body {
 
 .content {
     flex: 1;
-
     margin-left: var(--sidebar-width);
-
     padding: 2rem;
-
     min-width: 0;
 }
 
@@ -175,16 +153,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     gap: 1rem;
-
     margin-bottom: 2rem;
 }
 
 header h1 {
     font-size: 1.8rem;
     font-weight: 700;
-
     color: var(--text-dark);
 }
 
@@ -195,14 +170,10 @@ header h1 {
 
 #adminStatus {
     font-size: 0.8rem;
-
     background: #dcfce7;
     color: #166534;
-
     padding: 5px 12px;
-
     border-radius: 20px;
-
     white-space: nowrap;
 }
 
@@ -213,38 +184,28 @@ header h1 {
 
 .stats-grid {
     display: grid;
-
     grid-template-columns:
         repeat(auto-fit, minmax(180px, 1fr));
-
     gap: 1rem;
-
     margin-bottom: 1.5rem;
 }
 
 .stat-card {
     background: var(--white);
-
     padding: 1.25rem;
-
     border-radius: 12px;
-
     box-shadow: var(--shadow);
 }
 
 .stat-card h3 {
     font-size: 0.8rem;
-
     color: var(--text-muted);
-
     margin-bottom: 8px;
 }
 
 .stat-card p {
     font-size: 1.8rem;
-
     font-weight: 800;
-
     color: var(--text-dark);
 }
 
@@ -255,14 +216,10 @@ header h1 {
 
 .table-container {
     background: var(--white);
-
     border-radius: 12px;
-
     box-shadow: var(--shadow);
-
     overflow-x: auto;
     overflow-y: hidden;
-
     -webkit-overflow-scrolling: touch;
 }
 
@@ -273,35 +230,24 @@ header h1 {
 
 table {
     width: 100%;
-
     min-width: 700px;
-
     border-collapse: collapse;
-
     text-align: left;
 }
 
 th {
     background: #f1f5f9;
-
     padding: 1rem;
-
     font-size: 0.75rem;
-
     text-transform: uppercase;
-
     color: var(--text-muted);
-
     white-space: nowrap;
 }
 
 td {
     padding: 1rem;
-
     border-bottom: 1px solid #f1f5f9;
-
     vertical-align: middle;
-
     font-size: 0.9rem;
 }
 
@@ -316,19 +262,12 @@ tbody tr:hover {
 
 .status-select {
     padding: 7px 10px;
-
     border-radius: 6px;
-
     border: 1px solid #ddd;
-
     font-size: 0.85rem;
-
     font-weight: 600;
-
     outline: none;
-
     background: white;
-
     cursor: pointer;
 }
 
@@ -343,23 +282,15 @@ tbody tr:hover {
 
 .add-btn {
     background: var(--primary-color);
-
     color: var(--white);
-
     border: none;
-
     padding: 10px 20px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     font-weight: 600;
-
     transition:
         background 0.2s ease,
         transform 0.15s ease;
-
     white-space: nowrap;
 }
 
@@ -373,17 +304,11 @@ tbody tr:hover {
 
 .save-btn {
     background: var(--primary-color);
-
     color: var(--white);
-
     border: none;
-
     padding: 12px 24px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     font-weight: 700;
 }
 
@@ -396,19 +321,14 @@ tbody tr:hover {
 .block-btn,
 .unblock-btn {
     background: none;
-
     border: none;
-
     cursor: pointer;
-
     padding: 5px;
-
     font-size: 1rem;
 }
 
 .edit-btn {
     color: var(--primary-color);
-
     margin-right: 10px;
 }
 
@@ -418,13 +338,11 @@ tbody tr:hover {
 
 .block-btn {
     color: var(--warning);
-
     margin-right: 10px;
 }
 
 .unblock-btn {
     color: var(--success);
-
     margin-right: 10px;
 }
 
@@ -435,19 +353,12 @@ tbody tr:hover {
 
 .wa-btn {
     background: #25d366;
-
     color: white;
-
     border: none;
-
     padding: 8px 16px;
-
     border-radius: 8px;
-
     text-decoration: none;
-
     transition: 0.3s ease;
-
     font-weight: 600;
 }
 
@@ -462,38 +373,24 @@ tbody tr:hover {
 
 .admin-modal {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
     padding: 1rem;
-
     background: rgba(0, 0, 0, 0.6);
-
     backdrop-filter: blur(4px);
-
     justify-content: center;
     align-items: center;
-
     z-index: 1000;
 }
 
 .modal-content {
     background: var(--white);
-
     padding: 2rem;
-
     border-radius: 16px;
-
     width: 100%;
-
     max-width: 700px;
-
     max-height: 90vh;
-
     overflow-y: auto;
-
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.2);
 }
@@ -505,45 +402,33 @@ tbody tr:hover {
 
 .form-grid {
     display: grid;
-
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
-
     gap: 1.2rem;
-
     margin-top: 1.5rem;
 }
 
 .form-grid input,
 .form-grid textarea {
     width: 100%;
-
     padding: 12px;
-
     border: 1px solid #e2e8f0;
-
     border-radius: 8px;
-
     font-size: 0.95rem;
-
     background: white;
 }
 
 .form-grid input:focus,
 .form-grid textarea:focus {
     border-color: var(--primary-color);
-
     outline: none;
-
     box-shadow:
         0 0 0 3px var(--primary-light);
 }
 
 .form-grid textarea {
     grid-column: span 2;
-
     height: 100px;
-
     resize: vertical;
 }
 
@@ -554,27 +439,18 @@ tbody tr:hover {
 
 .modal-actions {
     display: flex;
-
     justify-content: flex-end;
-
     gap: 1rem;
-
     margin-top: 2rem;
-
     flex-wrap: wrap;
 }
 
 .cancel-btn {
     background: #f1f5f9;
-
     color: var(--text-muted);
-
     border: none;
-
     padding: 10px 20px;
-
     border-radius: 8px;
-
     cursor: pointer;
 }
 
@@ -585,39 +461,26 @@ tbody tr:hover {
 
 .image-input-row {
     display: flex;
-
     gap: 8px;
-
     margin-bottom: 8px;
 }
 
 .image-input-row input {
     flex: 1;
-
     min-width: 0;
-
     border: 1px solid #e2e8f0;
-
     padding: 10px;
-
     border-radius: 6px;
-
     font-size: 0.9rem;
 }
 
 .add-img-btn {
     margin-top: 10px;
-
     background: #e2e8f0;
-
     border: none;
-
     padding: 7px 12px;
-
     border-radius: 6px;
-
     cursor: pointer;
-
     font-size: 0.8rem;
 }
 
@@ -632,17 +495,11 @@ tbody tr:hover {
 
 #adminGuardOverlay {
     position: fixed;
-
     inset: 0;
-
     background: var(--white);
-
     z-index: 9999;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 }
@@ -650,15 +507,10 @@ tbody tr:hover {
 .spinner {
     width: 40px;
     height: 40px;
-
     border: 4px solid var(--primary-light);
-
     border-top: 4px solid var(--primary-color);
-
     border-radius: 50%;
-
     animation: spin 1s linear infinite;
-
     margin-bottom: 1rem;
 }
 
@@ -675,43 +527,28 @@ tbody tr:hover {
 
 .badge-active {
     background: #e8f5e9;
-
     color: #2e7d32;
-
     padding: 4px 10px;
-
     border-radius: 12px;
-
     font-size: 0.75rem;
-
     font-weight: 700;
 }
 
 .badge-blocked {
     background: #ffebee;
-
     color: #c62828;
-
     padding: 4px 10px;
-
     border-radius: 12px;
-
     font-size: 0.75rem;
-
     font-weight: 700;
 }
 
 .badge-orders {
     background: #f1f5f9;
-
     color: #475569;
-
     padding: 2px 8px;
-
     border-radius: 4px;
-
     font-size: 0.8rem;
-
     font-weight: 600;
 }
 
@@ -722,9 +559,7 @@ tbody tr:hover {
 
 .customer-info small {
     display: block;
-
     color: var(--text-muted);
-
     font-size: 0.75rem;
 }
 
@@ -738,38 +573,32 @@ tbody tr:hover {
 
 #userDetailContent p {
     margin-bottom: 12px;
-
     font-size: 0.95rem;
 }
 
 #userDetailContent small {
     color: var(--text-muted);
-
     text-transform: uppercase;
-
     font-size: 0.7rem;
-
     letter-spacing: 0.5px;
 }
 
 #userDetailContent h4 {
     font-size: 1rem;
-
     font-weight: 700;
 }
 
 #userDetailContent ul li {
     padding: 5px 0;
-
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 
 /* =========================================================
-   MOBILE BOTTOM NAV
+   MOBILE ADMIN NAVIGATION
    ========================================================= */
 
-.mobile-bottom-nav {
+.mobile-admin-nav {
     display: none;
 }
 
@@ -799,7 +628,6 @@ tbody tr:hover {
     .sidebar .logo {
         margin-bottom: 2rem;
     }
-
 }
 
 
@@ -810,7 +638,7 @@ tbody tr:hover {
 @media (max-width: 700px) {
 
     body {
-        padding-bottom: 72px;
+        padding-bottom: 76px;
     }
 
 
@@ -829,9 +657,7 @@ tbody tr:hover {
 
     .content {
         margin-left: 0;
-
         padding: 1rem;
-
         width: 100%;
     }
 
@@ -842,9 +668,7 @@ tbody tr:hover {
 
     header {
         align-items: flex-start;
-
         flex-direction: column;
-
         margin-bottom: 1.25rem;
     }
 
@@ -858,7 +682,6 @@ tbody tr:hover {
 
     .add-btn {
         width: 100%;
-
         padding: 12px;
     }
 
@@ -886,11 +709,6 @@ tbody tr:hover {
 
     .table-container {
         border-radius: 10px;
-
-        /*
-         * Tables stay wide and become horizontally
-         * scrollable instead of destroying the layout.
-         */
         overflow-x: auto;
     }
 
@@ -901,7 +719,6 @@ tbody tr:hover {
     th,
     td {
         padding: 0.75rem;
-
         font-size: 0.8rem;
     }
 
@@ -912,19 +729,14 @@ tbody tr:hover {
 
     .admin-modal {
         padding: 0.75rem;
-
         align-items: flex-end;
     }
 
     .modal-content {
         width: 100%;
-
         max-width: none;
-
         max-height: 92vh;
-
         padding: 1.25rem;
-
         border-radius: 18px 18px 0 0;
     }
 
@@ -935,7 +747,6 @@ tbody tr:hover {
 
     .form-grid {
         grid-template-columns: 1fr;
-
         gap: 1rem;
     }
 
@@ -954,13 +765,11 @@ tbody tr:hover {
 
     .modal-actions {
         width: 100%;
-
         gap: 0.75rem;
     }
 
     .modal-actions button {
         flex: 1;
-
         min-height: 44px;
     }
 
@@ -979,80 +788,73 @@ tbody tr:hover {
 
 
     /* -----------------------------------------
-       Mobile bottom navigation
+       Mobile Admin Navigation
        ----------------------------------------- */
 
-    .mobile-bottom-nav {
+    .mobile-admin-nav {
         position: fixed;
-
         display: flex;
-
         left: 0;
         right: 0;
         bottom: 0;
 
-        height: 68px;
+        height: 72px;
 
-        background: rgba(255, 255, 255, 0.96);
-
-        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
 
         border-top: 1px solid #e5e7eb;
 
         z-index: 9000;
 
         justify-content: space-around;
-
         align-items: center;
 
         padding:
             5px max(5px, env(safe-area-inset-right)) max(5px, env(safe-area-inset-bottom)) max(5px, env(safe-area-inset-left));
     }
 
-    .mobile-nav-item {
+    .mobile-admin-nav-item {
         flex: 1;
-
         height: 100%;
 
         display: flex;
-
         flex-direction: column;
-
         align-items: center;
-
         justify-content: center;
 
-        gap: 4px;
+        gap: 5px;
 
-        text-decoration: none;
+        background: transparent;
+        border: none;
 
         color: #64748b;
 
+        font-family: inherit;
         font-size: 0.68rem;
-
         font-weight: 600;
+
+        cursor: pointer;
+
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .mobile-nav-item i {
+    .mobile-admin-nav-item i {
         font-size: 1.1rem;
+        transition: transform 0.15s ease;
     }
 
-    .mobile-nav-item.active {
+    .mobile-admin-nav-item.active {
         color: var(--primary-color);
     }
 
-    .mobile-nav-item.featured {
-        color: #475569;
+    .mobile-admin-nav-item.active i {
+        transform: translateY(-1px);
     }
 
-    .mobile-navbar-avatar {
-        width: 25px;
-
-        height: 25px;
-
-        border-radius: 50%;
-
-        object-fit: cover;
+    .mobile-admin-nav-item:active {
+        transform: scale(0.94);
     }
 }
 
@@ -1075,8 +877,15 @@ tbody tr:hover {
         padding: 1rem;
     }
 
-    .mobile-bottom-nav {
-        height: 64px;
+    .mobile-admin-nav {
+        height: 68px;
     }
 
+    .mobile-admin-nav-item {
+        font-size: 0.63rem;
+    }
+
+    .mobile-admin-nav-item i {
+        font-size: 1rem;
+    }
 }

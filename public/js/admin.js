@@ -378,25 +378,69 @@ window.deleteUserAccount = async (uid) => {
     }
 };
 
+
 // Switch between admin tabs
 window.switchTab = (tab) => {
-    // Hide all sections, deactivate all tabs
-    ['orders', 'products', 'customers', 'admins'].forEach(t => {
-        const sect = document.getElementById(`${t}-section`);
-        const bt = document.getElementById(`tab-${t}`);
-        if (sect) sect.style.display = 'none';
-        if (bt) bt.classList.remove('active');
+    const tabs = ['orders', 'products', 'customers', 'admins'];
+
+    // Hide all sections and deactivate all tabs
+    tabs.forEach(t => {
+        const section = document.getElementById(`${t}-section`);
+        const desktopTab = document.getElementById(`tab-${t}`);
+        const mobileTab = document.getElementById(`mobile-tab-${t}`);
+
+        if (section) {
+            section.style.display = 'none';
+        }
+
+        if (desktopTab) {
+            desktopTab.classList.remove('active');
+        }
+
+        if (mobileTab) {
+            mobileTab.classList.remove('active');
+        }
     });
-    // Show selected section, activate tab
+
+    // Show selected section
     const activeSection = document.getElementById(`${tab}-section`);
-    const activeTab = document.getElementById(`tab-${tab}`);
-    if (activeSection) activeSection.style.display = 'block';
-    if (activeTab) activeTab.classList.add('active');
-    // Start relevant listener
-    if (tab === 'orders') startOrderListener();
-    if (tab === 'products') startProductListener();
-    if (tab === 'customers') startCustomerListener();
-    if (tab === 'admins') startAdminListener();
+
+    if (activeSection) {
+        activeSection.style.display = 'block';
+    }
+
+    // Activate desktop sidebar tab
+    const activeDesktopTab = document.getElementById(`tab-${tab}`);
+
+    if (activeDesktopTab) {
+        activeDesktopTab.classList.add('active');
+    }
+
+    // Activate mobile admin tab
+    const activeMobileTab = document.getElementById(`mobile-tab-${tab}`);
+
+    if (activeMobileTab) {
+        activeMobileTab.classList.add('active');
+    }
+
+    // Start relevant Firestore listener
+    if (tab === 'orders') {
+        startOrderListener();
+    } else if (tab === 'products') {
+        startProductListener();
+    } else if (tab === 'customers') {
+        startCustomerListener();
+    } else if (tab === 'admins') {
+        startAdminListener();
+    }
+
+    // Scroll to top when switching tabs on mobile
+    if (window.innerWidth <= 700) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 };
 
 // Close any open modal by ID

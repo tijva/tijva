@@ -33,34 +33,30 @@ const messaging = firebase.messaging();
 // ============================================================
 
 messaging.onBackgroundMessage((payload) => {
-
-    console.log(
-        '[Tijva FCM] Background message:',
-        payload
-    );
+    console.log('[Tijva FCM] Background message:', payload);
 
     const title =
-        payload.notification?.title ||
+        payload.data?.title ||
         'Tijva';
 
-    const options = {
+    const body =
+        payload.data?.body ||
+        'You have a new Tijva notification.';
 
-        body:
-            payload.notification?.body ||
-            'You have a new Tijva notification.',
+    const options = {
+        body: body,
 
         icon: '/assets/images/logo.png',
-
         badge: '/assets/images/logo.png',
 
-        data:
-            payload.data || {},
+        data: {
+            ...(payload.data || {}),
+            url: payload.data?.url || 'https://tijva.com/admin'
+        },
 
         tag: 'tijva-notification',
-
         renotify: true
     };
-
 
     self.registration.showNotification(
         title,
@@ -79,10 +75,9 @@ self.addEventListener(
 
         event.notification.close();
 
-
         const targetUrl =
             event.notification?.data?.url ||
-            '/admin.html';
+            'https://tijva.com/admin';
 
 
         event.waitUntil(
@@ -94,18 +89,21 @@ self.addEventListener(
 
                 .then((clientList) => {
 
+                    // Look for an already-open Tijva admin page
                     for (const client of clientList) {
 
                         if (
-                            client.url.includes('/admin') &&
+                            client.url.startsWith(
+                                'https://tijva.com/admin'
+                            ) &&
                             'focus' in client
                         ) {
-
                             return client.focus();
                         }
                     }
 
 
+                    // Otherwise open Tijva admin
                     if (clients.openWindow) {
                         return clients.openWindow(
                             targetUrl

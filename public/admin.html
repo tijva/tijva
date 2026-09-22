@@ -275,36 +275,31 @@
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/admin.js"></script>
 
-    <!-- Mobile Bottom Navigation -->
-    <nav class="mobile-bottom-nav">
-    
-        <a href="index.html" class="mobile-nav-item">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-    
-        <a href="products.html" class="mobile-nav-item featured">
-            <i class="fas fa-store"></i>
-            <span>Shop</span>
-        </a>
-    
-        <a href="cart.html" class="mobile-nav-item featured">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Cart</span>
-        </a>
-    
-        <a href="javascript:void(0)"
-   onclick="handleUserIconClick()"
-   class="mobile-nav-item active">
+    <!-- Mobile Admin Navigation -->
+    <nav class="mobile-admin-nav">
 
-    <img id="mobileNavbarAvatar"
-         src="assets/images/avatars/1.png"
-         alt="Profile"
-         class="mobile-navbar-avatar">
+        <button class="mobile-admin-nav-item active" id="mobile-tab-orders" onclick="switchTab('orders')">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Orders</span>
+        </button>
 
-    <span>Profile</span>
-</a>
-    
+        <button class="mobile-admin-nav-item" id="mobile-tab-products" onclick="switchTab('products')">
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+        </button>
+
+        <button class="mobile-admin-nav-item" id="mobile-tab-customers" onclick="switchTab('customers')">
+            <i class="fas fa-users"></i>
+            <span>Customers</span>
+        </button>
+
+        <button class="mobile-admin-nav-item" id="mobile-tab-admins" onclick="switchTab('admins')">
+            <i class="fas fa-user-shield"></i>
+            <span>Staff</span>
+        </button>
+
+    </nav>
+
     </nav>
 </body>
 
