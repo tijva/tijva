@@ -1026,7 +1026,7 @@ function setupWhatsApp(product) {
 
 
     const phone =
-        "923006210027";
+        "923399621000";
 
 
     const message = `
@@ -1187,7 +1187,7 @@ function updateWhatsAppVariant() {
 
 
     const phone =
-        "923006210027";
+        "923399621000";
 
 
     const productName =

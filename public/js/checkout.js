@@ -347,27 +347,17 @@ paymentSelect.onchange = () => {
 
     // Base message for manual payments
     const screenshotMsg = `<p style="color: #ff5a36; font-weight: bold; margin-top: 10px;">
-        <i class="fas fa-exclamation-triangle" style="font-size: 30px; margin-right: 5px;"></i> IMPORTANT: Please send a screenshot of your payment receipt to our <a href="https://wa.me/03006210027" target="_blank" style="color: #075E54; text-decoration: none;"><i class="fab fa-whatsapp" style="font-weight: bold;"></i> WhatsApp (0300-XXXXXXX)</a> for verification.
+        <i class="fas fa-exclamation-triangle" style="font-size: 30px; margin-right: 5px;"></i> IMPORTANT: Please send a screenshot of your payment receipt to our <a href="https://wa.me/923399621000" target="_blank" style="color: #075E54; text-decoration: none;"><i class="fab fa-whatsapp" style="font-weight: bold;"></i> WhatsApp (+92 339 9621000)</a> for verification.
     </p>`;
 
     if (method === 'bank_transfer') {
         instructionText.innerHTML = `
-            <strong>Bank:</strong> HBL <br>
-            <strong>Acc Name:</strong> Tijva <br>
-            <strong>IBAN:</strong> PK00 HABA 0000 1234 5678 90 
+            <strong>Bank:</strong> United Bank Ltd. (UBL) <br>
+            <strong>Acc Name:</strong> IMRAN SADIQ <br>
+            <strong>IBAN:</strong> PK22 UNIL 0109 0003 8728 8316
             ${screenshotMsg}`;
-    } else if (method === 'easypaisa') {
-        instructionText.innerHTML = `
-            <strong>Easypaisa:</strong> 0300-XXXXXXX <br>
-            <strong>Name:</strong> Abdullah Imran
-            ${screenshotMsg}`;
-    } else if (method === 'jazzcash') {
-        instructionText.innerHTML = `
-            <strong>JazzCash:</strong> 0300-XXXXXXX <br>
-            <strong>Name:</strong> Abdullah Imran
-            ${screenshotMsg}`;
-    } else {
-        instructionsDiv.style.display = 'none'; // Hide for COD
+        } else {
+            instructionsDiv.style.display = 'none'; // Hide for COD
     }
 };
 

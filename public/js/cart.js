@@ -316,7 +316,7 @@ window.sendWhatsAppOrder = async () => {
     }
 
     message += `💰 *Total: Rs. ${runningTotal}*`;
-    const phone = "923006210027";
+    const phone = "923399621000";
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 };
 
